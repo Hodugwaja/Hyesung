@@ -1,0 +1,25 @@
+{
+  "name": "hyesungbot",
+  "version": "1.0.0",
+  "description": "Studying Discord.js",
+  "main": "HyeSung.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cropMr/Hyesung.git"
+  },
+  "keywords": [
+    "HyeSung"
+  ],
+  "author": "HoduGwaja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cropMr/Hyesung/issues"
+  },
+  "homepage": "https://github.com/cropMr/Hyesung#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
