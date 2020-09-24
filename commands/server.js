@@ -13,7 +13,7 @@ module.exports = {
         .setThumbnail(`${message.guild.iconURL()}`)
         .addFields(
             { name: '서버 이름', value: `${message.guild.name}  `, inline: false},
-            { name: '서버 인원', value: `${message.guild.memberCount}  `, inline: false },
+            { name: '서버 인원', value: `${message.guild.memberCount}명`, inline: false },
             { name: '서버 개설일', value: `${message.guild.createdAt}`, inline: false },
         )
         .setFooter('호두과자 #8981', 'https://imgur.com/DD3DQxx.jpg');

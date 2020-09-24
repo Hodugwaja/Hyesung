@@ -5,16 +5,27 @@ client.commands = new Discord.Collection();
 const { call, prefix, token } = require("./config.json");
 const { Server } = require('http');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
+const mongo = require('./mongo');
+const { Mongoose } = require('mongoose');
 
 for (const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
 
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log("혜성봇 켜졌습니다");
     client.user.setActivity("빛나기");  
+
+    await mongo().then(Mongoose => {
+        try{
+            console.log('connected to mongo!');
+        }catch(e){
+
+        }finally{
+            Mongoose.connection.close();
+        }
+    })
 });
 client.on('disconnect', () => {
     console.log(client.user.tag + " 퇴근합니다!");
@@ -46,7 +57,7 @@ client.on('message', (message) => {
             return message.channel.send(`프사인데요 <${message.author.displayAvatarURL({fomat : "png", dynamic: true})}>`)
         }else{
             const taggeduser = message.mentions.users.first();
-            return message.channel.send(`${taggeduser.username}님의 프사인데요 <${taggeduser.displayAvatarURL({fomat : "png", dynamic: true})}>`)
+            return message.channel.send(`${taggeduser.username}님의 프사인데요 https://cdn.discordapp.com/avatars/${taggeduser.id}/4db8fa31cf98a5cc0ebc8ecbda271289.png?size=128`)
         }
     }else{ 
         if(!client.commands.has(command)) return;
@@ -62,4 +73,3 @@ client.on('message', (message) => {
 
 client.login(token);
 //https://discordapp.com/oauth2/authorize?client_id=756728393839411281&scope=bot&permissions=8
-
