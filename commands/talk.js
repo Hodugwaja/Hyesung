@@ -1,12 +1,4 @@
 module.exports = {
-    name : '안녕',
-    description : '인사!',
-    execute(message, args){
-       return message.channel.send('안녕하십니까? ' + message.author.username +"님")
-    }
-}
-
-module.exports = {
     name : '테스트',
     description : 'just a test',
     execute(message, args){
