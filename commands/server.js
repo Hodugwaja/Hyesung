@@ -8,7 +8,7 @@ module.exports = {
         .setColor('#0099ff')
         .setTitle('혜성봇 조사 보고서')
         .setURL('https://github.com/cropMr/Hyesung')
-        .setAuthor('혜성봇#3150', 'https://imgur.com/Slc6oNo.jpg', 'https://discordapp.com/oauth2/authorize?client_id=756728393839411281&scope=bot&permissions=8')
+        .setAuthor('혜성봇#3150', 'https://imgur.com/Slc6oNo.jpg', 'https://github.com/cropMr/Hyesung')
         .setDescription(`${message.author.username}` + "님이 요청한 서버조사 결과입니다")
         .setThumbnail(`${message.guild.iconURL()}`)
         .addFields(
